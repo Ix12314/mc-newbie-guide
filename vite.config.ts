@@ -1,9 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tsconfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
+// GitHub Pages 部署：仓库名为 hn-news，访问路径为 https://<user>.github.io/hn-news/
+// 如仓库名不同，请同步修改 base 路径
 export default defineConfig({
-  base: '/mc-newbie-guide/',
+  base: '/hn-news/',
   build: {
     sourcemap: 'hidden',
   },
@@ -20,11 +22,9 @@ export default defineConfig({
   plugins: [
     react({
       babel: {
-        plugins: [
-          'react-dev-locator',
-        ],
+        plugins: ['react-dev-locator'],
       },
     }),
-    tsconfigPaths()
+    tsconfigPaths(),
   ],
-})
+});
